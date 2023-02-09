@@ -18,6 +18,7 @@
 2. Run infrastrucrure using terraform
 ```bash      
    gcloud auth application-default login
+   cd Terraform
    terraform init
    terraform plan
    terraform apply
@@ -35,6 +36,7 @@
 
 5. Build Docker file for python application to create image then push it to GCR
 ```bash  
+   cd Docker Image
    docker build -t project-python-app .
    docker tag project-python-app gcr.io/mineral-order-375711/project-python-app
    docker push gcr.io/mineral-order-375711/project-python-app:latest
