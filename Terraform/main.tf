@@ -9,7 +9,7 @@ module "network" {
 
   subnet = {
     "management-subnet" = { cidr = "10.0.0.0/24", region = "us-central1" },
-    "restricted-subnet" = { cidr = "10.0.6.0/24", region = "europe-west1" },
+    "restricted-subnet" = { cidr = "10.0.6.0/24", region = "us-central1" },
   }
 }
 
@@ -28,3 +28,9 @@ module "vm" {
   management-subnet = module.network.management-subnet-id
 }
 
+module "gke" {
+  source            = "./gke"
+  vpcID             = module.network.vpc-id
+  restricted-subnet = module.network.restricted-subnet-id
+
+}

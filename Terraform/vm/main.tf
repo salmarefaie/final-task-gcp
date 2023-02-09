@@ -5,36 +5,36 @@ resource "google_compute_instance" "vm" {
   machine_type = "f1-micro"
 
 
-boot_disk {
+  boot_disk {
     initialize_params {
       image = "debian-cloud/debian-11"
-      type = "pd-standard"
+      type  = "pd-standard"
     }
   }
-service_account {
+  service_account {
     email  = var.service_account
     scopes = ["cloud-platform"]
   }
-   
-tags = ["ssh"]
 
-network_interface {
-    network = var.vpcID
+  tags = ["ssh"]
+
+  network_interface {
+    network    = var.vpcID
     subnetwork = var.management-subnet
-}
+  }
 
 }
 
 # firewall for vm 
-resource "google_compute_firewall" "default" {
+resource "google_compute_firewall" "ssh" {
   name    = "ssh-firewall"
   network = var.vpcID
 
   allow {
-    protocol  = "tcp"
-    ports     = ["22"]
+    protocol = "tcp"
+    ports    = ["22"]
   }
- 
- target_tags = ["ssh"]
- source_ranges = ["35.235.240.0/20"]
+
+  target_tags   = ["ssh"]
+  source_ranges = ["35.235.240.0/20"]
 }

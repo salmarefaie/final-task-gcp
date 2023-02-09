@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+  labels:
+    app: python-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app-container
+        image: gcr.io/mineral-order-375711/project-python-app
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: config-map

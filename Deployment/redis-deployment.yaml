@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: redis-deployment
+spec:
+  selector:
+    matchLabels:
+      app: redis
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: redis  
+    spec:
+      containers:
+      - name: redis-container
+        image: gcr.io/mineral-order-375711/project-redis 
+        ports:
+        - containerPort: 6379

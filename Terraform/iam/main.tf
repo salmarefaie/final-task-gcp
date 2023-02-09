@@ -5,11 +5,11 @@ resource "google_service_account" "service_account" {
 }
 
 resource "google_project_iam_binding" "project" {
-  project = "mineral-order-375711"
+  project  = "mineral-order-375711"
   for_each = var.role
-  role    = each.value
+  role     = each.value
   members = [
-     "serviceAccount:${google_service_account.service_account.email}",
+    "serviceAccount:${google_service_account.service_account.email}",
   ]
 }
 

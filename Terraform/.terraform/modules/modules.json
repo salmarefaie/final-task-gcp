@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"iam","Source":"./iam","Dir":"iam"},{"Key":"network","Source":"./network","Dir":"network"},{"Key":"vm","Source":"./vm","Dir":"vm"}]}
+{"Modules":[{"Key":"iam","Source":"./iam","Dir":"iam"},{"Key":"network","Source":"./network","Dir":"network"},{"Key":"vm","Source":"./vm","Dir":"vm"},{"Key":"gke","Source":"./gke","Dir":"gke"},{"Key":"","Source":"","Dir":"."}]}

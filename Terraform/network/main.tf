@@ -18,8 +18,8 @@ resource "google_compute_subnetwork" "subnets" {
 resource "google_compute_router" "router" {
   name    = var.router-name
   network = google_compute_network.vpc.id
-  region = google_compute_subnetwork.subnets["management-subnet"].region
-  }
+  region  = google_compute_subnetwork.subnets["management-subnet"].region
+}
 
 # nat   
 resource "google_compute_router_nat" "nat" {
@@ -28,9 +28,9 @@ resource "google_compute_router_nat" "nat" {
   region                             = google_compute_router.router.region
   nat_ip_allocate_option             = "AUTO_ONLY"
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
-  
-  subnetwork{
-    name =  google_compute_subnetwork.subnets["management-subnet"].id
+
+  subnetwork {
+    name                    = google_compute_subnetwork.subnets["management-subnet"].id
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
 

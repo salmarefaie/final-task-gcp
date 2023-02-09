@@ -19,11 +19,11 @@ variable "nat-name" {
 }
 
 variable "routing-mode" {
-  type = string
+  type        = string
   description = "regional for routing mode"
 }
 
 variable "auto-subnets" {
-  type = bool
+  type        = bool
   description = "no auto subnets , custom subnets"
 }

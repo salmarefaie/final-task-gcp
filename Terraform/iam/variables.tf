@@ -1,5 +1,5 @@
 variable "role" {
-  type = map
+  type        = map(any)
   description = "permision roles"
 }
 
