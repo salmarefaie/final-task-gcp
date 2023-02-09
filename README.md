@@ -1,7 +1,7 @@
 # final-task-gcp
 
 ## Description
-> It is a simple infrastructure which have 1 vpc and 2 subnets. First subnet is called management subnet which contains private vm and nat gateway. Second subnet is called restricted subnet which contains private standard GKE cluster and private control plane. Only management subnet can connect to the cluster. Service account is created and attached to vm with least privillage. Python application with redis are deployed and their images are pushed to GCR. Deployment is exposed to public internet with public http load balancer.
+> It is a simple infrastructure which have 1 vpc and 2 subnets. First subnet is called management subnet which contains private vm and nat gateway. Second subnet is called restricted subnet which contains private standard GKE cluster and private control plane. Only management subnet can connect to the cluster. Service accounts are created and attached to vm and cluster with least privillage. Python application with redis are deployed and their images are pushed to GCR. Deployment is exposed to public internet with public http load balancer.
 
 ## Tools
   - Google Cloud Platform (GCP)
