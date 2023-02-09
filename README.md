@@ -79,10 +79,9 @@
    kubectl apply -f loadBalancer-service.yaml
    kubectl get all
 ```
-![Screenshot from 2023-02-09 17-28-50](https://user-images.githubusercontent.com/76884936/217857331-06f0bd05-f455-4f89-85c2-a4554cf1f34e.png)
-![Screenshot from 2023-02-09 17-25-49](https://user-images.githubusercontent.com/76884936/217856426-4277922d-9f3a-4714-8d60-5c3275e4ca16.png)
+![Screenshot from 2023-02-09 23-43-31](https://user-images.githubusercontent.com/76884936/217946287-7fbe9cc2-2830-4a7b-8e00-f33b3b9816f1.png)
+![Screenshot from 2023-02-09 23-46-02](https://user-images.githubusercontent.com/76884936/217946544-5fc26fae-807e-4243-896b-cbba5a776211.png)
 
 11. expose application to public internet by load balancer ip 
 
-![Screenshot from 2023-02-09 16-42-13](https://user-images.githubusercontent.com/76884936/217851893-f9c43cfe-d88c-4467-8fcb-c24310e5ab36.png)
-
+![Screenshot from 2023-02-09 23-42-13](https://user-images.githubusercontent.com/76884936/217946182-41c473f1-76e3-4bf1-9a0d-bc6e5c52b830.png)
