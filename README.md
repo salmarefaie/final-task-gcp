@@ -12,7 +12,7 @@
 ## Run Project 
 1. Clone the project
 ```bash  
-   https://github.com/salmarefaie/final-task-gcp.git
+   git clone https://github.com/salmarefaie/final-task-gcp.git
 ```
 
 2. Run infrastrucrure using terraform
