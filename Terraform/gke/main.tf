@@ -1,6 +1,6 @@
 resource "google_container_cluster" "gke" {
-  name     = "gke"
-  location = "us-central1-a"
+  name     = var.gke-name
+  location = var.zone
 
   release_channel {
     channel = "STABLE"
@@ -13,33 +13,33 @@ resource "google_container_cluster" "gke" {
 
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block   = "10.0.0.0/24"
-      display_name = "managment-subnet-cidr"
+      cidr_block   = var.cidr-subnet
+      display_name = var.sumnet-name
     }
   }
 
   private_cluster_config {
     enable_private_endpoint = true
     enable_private_nodes    = true
-    master_ipv4_cidr_block  = "172.16.0.0/28"
+    master_ipv4_cidr_block  = var.master-cidr
   }
 
   ip_allocation_policy {
-    cluster_ipv4_cidr_block  = "10.16.0.0/16"
-    services_ipv4_cidr_block = "10.12.0.0/16"
+    cluster_ipv4_cidr_block  = var.cluster-cidr
+    services_ipv4_cidr_block = var.service-cidr
   }
-
 }
 
 resource "google_container_node_pool" "node-pool" {
-  name       = "node-pool"
+  name       = var.node-name
   cluster    = google_container_cluster.gke.id
   node_count = 1
-  location   = "us-central1-b"
+  location   = var.zone-node
 
   node_config {
-    preemptible  = true
-    machine_type = "g1-small"
+    preemptible     = true
+    machine_type    = var.machine-type
+    service_account = var.gke-service-account
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
