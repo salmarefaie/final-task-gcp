@@ -41,6 +41,7 @@
    docker tag project-python-app gcr.io/mineral-order-375711/project-python-app
    docker push gcr.io/mineral-order-375711/project-python-app:latest
 ```
+![Screenshot from 2023-02-09 23-23-09](https://user-images.githubusercontent.com/76884936/217942752-c3481843-5233-4a5f-9e44-a7430ea900fa.png)
 
 6. Pull redis image from docker hub then push it to GCR
 ```bash  
@@ -48,7 +49,7 @@
    docker tag redis gcr.io/mineral-order-375711/project-redis
    docker push gcr.io/mineral-order-375711/project-redis:latest
 ```
-![Screenshot from 2023-02-09 17-23-02](https://user-images.githubusercontent.com/76884936/217855694-db91b6d5-55a2-465d-9e59-aecc022f070f.png)
+![Screenshot from 2023-02-09 23-23-36](https://user-images.githubusercontent.com/76884936/217942382-4fa616f6-f72d-4c96-8a72-e8078bc931d4.png)
 
 7. Connect to vm by ssh
 
@@ -62,7 +63,7 @@
 ```
 ![Screenshot from 2023-02-09 17-16-02](https://user-images.githubusercontent.com/76884936/217854333-ef6535d8-a25a-486e-9f48-e5224cc2e50d.png)
 
-9. Upload yaml files which exists in deployment folder in repo 
+9. Upload yaml files which exists in deployment folder in repo or you can make files in vm by using vi command
    - redis-deployment.yaml: deployment of redis image
    - clusterIP-service.yaml: service to make communication between redis and python application 
    - config-map.yaml: declares enviroments variables. Env variables can be declared also  in docker file but config map is better. 
