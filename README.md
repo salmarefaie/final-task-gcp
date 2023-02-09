@@ -57,9 +57,9 @@
 
 8. Connect to cluster from vm and install kubectl and auth plugins 
 ```bash  
-   gcloud container clusters get-credentials gke --zone us-central1-a --project mineral-order-375711
    sudo apt-get install kubectl
    sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+   gcloud container clusters get-credentials gke --zone us-central1-a --project mineral-order-375711
 ```
 ![Screenshot from 2023-02-09 17-16-02](https://user-images.githubusercontent.com/76884936/217854333-ef6535d8-a25a-486e-9f48-e5224cc2e50d.png)
 
