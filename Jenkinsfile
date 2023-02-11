@@ -6,7 +6,7 @@ pipeline {
         stage('Clone') {
             steps {
                  git url:'https://github.com/salmarefaie/final-task-gcp.git',
-                 branch:'main',
+                 branch:'master',
                  credentialsId:'salmarefaie'
             }
         }
